@@ -1,8 +1,11 @@
-FROM node:8
+FROM node:carbon
 
-WORKDIR /opt/hl7
-COPY server.js /
-COPY client.html /
-COPY package.json /
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
 RUN npm install
-CMD [“node”, “server.js”]
+COPY . .
+
+EXPOSE 8000
+CMD [ "npm", "start" ]
