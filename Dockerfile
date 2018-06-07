@@ -4,5 +4,5 @@ WORKDIR /opt/hl7
 COPY server.js /
 COPY index.html /
 COPY package.json /
-RUN npm install --production
+RUN npm install
 CMD [“node”, “server.js”]
